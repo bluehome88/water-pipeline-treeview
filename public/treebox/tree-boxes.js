@@ -226,40 +226,6 @@ function treeBoxes(urlService, jsonData)
 			$('#nodeInfoTextID' + d.id).css('visibility', 'hidden');
 		});
 
-		// nodeEnterTooltip.append("rect")
-		// .attr('id', function(d) { return 'nodeInfoID' + d.id; })
-    	// .attr('x', rectNode.width / 2)
-		// .attr('y', rectNode.height / 2)
-		// .attr('width', tooltip.width)
-		// .attr('height', tooltip.height)
-    	// .attr('class', 'tooltip-box')
-    	// .style('fill-opacity', 0.8)
-		// .on('mouseover', function(d) {
-		// 	$('#nodeInfoID' + d.id).css('visibility', 'visible');
-		// 	$('#nodeInfoTextID' + d.id).css('visibility', 'visible');
-		// 	removeMouseEvents();
-		// })
-		// .on('mouseout', function(d) {
-		// 	$('#nodeInfoID' + d.id).css('visibility', 'hidden');
-		// 	$('#nodeInfoTextID' + d.id).css('visibility', 'hidden');
-		// 	reactivateMouseEvents();
-		// });
-
-		// nodeEnterTooltip.append("text")
-		// .attr('id', function(d) { return 'nodeInfoTextID' + d.id; })
-    	// .attr('x', rectNode.width / 2 + tooltip.textMargin)
-		// .attr('y', rectNode.height / 2 + tooltip.textMargin * 2)
-		// .attr('width', tooltip.width)
-		// .attr('height', tooltip.height)
-		// .attr('class', 'tooltip-text')
-		// .style('fill', 'white')
-		// .append("tspan")
-	    // .text(function(d) {return 'Name: ' + d.name;})
-	    // .append("tspan")
-	    // .attr('x', rectNode.width / 2 + tooltip.textMargin)
-	    // .attr('dy', '1.5em')
-	    // .text(function(d) {return 'Info: ' + d.label;});
-
 		// Transition nodes to their new position.
 		var nodeUpdate = node.transition().duration(duration)
 		.attr('transform', function(d) { return 'translate(' + d.y + ',' + d.x + ')'; });
@@ -342,49 +308,6 @@ function treeBoxes(urlService, jsonData)
 				// $('#tooltipLinkID' + d.target.id).css('visibility', 'hidden');
 				// $('#tooltipLinkTextID' + d.target.id).css('visibility', 'hidden');
 			});
-
-			// linkTooltip.enter().append('rect')
-			// .attr('id', function(d) { return 'tooltipLinkID' + d.target.id; })
-			// .attr('class', 'tooltip-box')
-			// .style('fill-opacity', 0.8)
-			// .attr('x', function(d) { return (d.target.y + rectNode.width - d.source.y) / 2 + d.source.y; })
-			// .attr('y', function(d) { return (d.target.x - d.source.x) / 2 + d.source.x; })
-			// .attr('width', tooltip.width)
-			// .attr('height', tooltip.height)
-			// .on('mouseover', function(d) {
-			// 	$('#tooltipLinkID' + d.target.id).css('visibility', 'visible');
-			// 	$('#tooltipLinkTextID' + d.target.id).css('visibility', 'visible');
-			// 	// After selected a link, the cursor can be hover the tooltip, that's why we still need to highlight the link and the arrow
-			// 	$('#linkID' + d.target.id).attr('class', 'linkselected');
-			// 	$('#linkID' + d.target.id).attr('marker-end', 'url(#end-arrow-selected)');
-			// 	$('#linkID' + d.target.id).attr('marker-start', linkMarkerStart('ASYN', true));
-
-			// 	removeMouseEvents();
-			// })
-			// .on('mouseout', function(d) {
-			// 	// $('#tooltipLinkID' + d.target.id).css('visibility', 'hidden');
-			// 	// $('#tooltipLinkTextID' + d.target.id).css('visibility', 'hidden');
-			// 	$('#linkID' + d.target.id).attr('class', 'link');
-			// 	$('#linkID' + d.target.id).attr('marker-end', 'url(#end-arrow)');
-			// 	$('#linkID' + d.target.id).attr('marker-start', linkMarkerStart('ASYN', false));
-
-			// 	reactivateMouseEvents();
-			// });
-
-			// linkTooltip.enter().append('text')
-			// .attr('id', function(d) { return 'tooltipLinkTextID' + d.target.id; })
-			// .attr('class', 'tooltip-text')
-			// .attr('x', function(d) { return (d.target.y + rectNode.width - d.source.y) / 2 + d.source.y + tooltip.textMargin; })
-			// .attr('y', function(d) { return (d.target.x - d.source.x) / 2 + d.source.x + tooltip.textMargin * 2; })
-			// .attr('width', tooltip.width)
-			// .attr('height', tooltip.height)
-			// .style('fill', 'white')
-			// .append("tspan")
-	   		// .text(function(d) { return linkType(d.target.link); })
-	   		// .append("tspan")
-	    	// .attr('x', function(d) { return (d.target.y + rectNode.width - d.source.y) / 2 + d.source.y + tooltip.textMargin; })
-	   		// .attr('dy', '1.5em')
-	    	// .text(function(d) {return '';});
 
 		// Transition links to their new position.
 		var linkUpdate = link.transition().duration(duration)
